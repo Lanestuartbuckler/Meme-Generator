@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Online Emotion Meme Generator</title>
+        <script src="Meme_Generator_Scripts.js"></script>
+        <style>
+            body {background-image: url("meme photos/memesitewallpaper.jpg");
+        }
+            h1 {background-color: aliceblue; text-align: center;
+        }
+            p  {background-color: bisque; text-align: center;
+        }
+            td {text-align: center;
+        }
+            .memeselection {text-align: center; padding-top: 20px;
+        }
+            .memeselection label {display: block; font-weight: bold; color: black; padding-top: 35px;
+        }
+            #SelectedMeme {position: absolute; padding-top: 50px;
+        }
+            #MemeText {position: absolute; padding-top: 50px;
+        }
+            .MemeOutput {text-align: center; padding-right: 366px;
+        }
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>This is a website that can generate your own meme based on an emotion!</h1>
+        <p>Below is where you select from an emotion and enter your own text to create your personal meme.</p>
+        <div class="memeselection">
+            <select name="options" id="SelectMeme" onchange="ShowMeme(this.value)">
+                <option value="">Select an emotion!</option>
+                <option value="1">Annoyed</option>
+                <option value="2">Content</option>
+                <option value="3">Dread</option>
+                <option value="4">Happy</option>
+                <option value="5">Sad</option>
+            </select>
+
+            <label>Enter Top Text of Meme</label>
+            <input type="text" id="TopTextInput" onchange="ShowMeme()">
+            
+            <label>Enter Bottom Text of Meme</label>
+            <input type="text" id="BottomTextInput" onchange="ShowMeme()">
+        </div>
+        <div class="MemeOutput">
+            <img id="SelectedMeme" src="meme photos/none.jpg" width="360" height="350">
+            <canvas id="MemeText"></canvas>
+        </div>
+    </body>
+</html>
